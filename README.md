@@ -85,7 +85,7 @@ pip install opencv-python face_recognition numpy
 
 Windows users (recommended):
 
-Install dlib prebuilt wheels:
+## Install dlib prebuilt wheels:
 ```text
 
 pip install cmake
@@ -118,7 +118,9 @@ create_face_encodings(
 
 ## Outputs:
 ✔ Face encodings
+
 ✔ Name associations
+
 ✔ Saved .pkl dataset
 
 ##2️⃣ Enroll a New Face via Webcam
