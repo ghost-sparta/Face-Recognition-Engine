@@ -1,4 +1,4 @@
-Face Recognition Engine
+## Face Recognition Engine
 Fast, Optimized, Production-Ready Face Encoding & Real-Time Recognition System
 
 This repository provides a complete face recognition pipeline built with Python, OpenCV, and face_recognition.
@@ -14,15 +14,15 @@ It includes:
 
 🔹 FPS-Optimized Detection with Caching & Frame Skipping
 
-Designed for real-world use in:
+## Designed for real-world use in:
 ✔ CCTV Surveillance
 ✔ Smart Home Systems
 ✔ Access Control / Door Systems
 ✔ Security & Pentesting Tools
 ✔ Machine Vision Projects
 
-📸 Features
-🔐 Face Encoder & Enrollment
+## 📸 Features
+## 🔐 Face Encoder & Enrollment
 
 Encode multiple faces from a folder structure
 
@@ -32,7 +32,7 @@ Automatically updates and saves face encodings
 
 Compatible with old & new encoding formats
 
-⚡ High-Performance Recognition Engine
+## ⚡ High-Performance Recognition Engine
 
 Multi-threaded processing
 
@@ -48,7 +48,7 @@ Real-time FPS + system stats overlay
 
 Robust logging & error handling
 
-🧠 Robust Architecture
+## 🧠 Robust Architecture
 
 Handles corrupted files gracefully
 
@@ -60,7 +60,8 @@ Thread-safe cached results
 
 Easily extendable (Flask, FastAPI, PyQt5, CCTV systems, etc.)
 
-📁 Project Structure
+## 📁 Project Structure
+```bash
 project/
 │
 ├── data/
@@ -76,23 +77,26 @@ project/
 │
 ├── face_recognition_module.py      # Production recognition engine
 └── face encoder and enroller.py    # Encoder + enrollment tool
+```
 
-🔧 Installation
+## 🔧 Installation
 Install Python dependencies:
 pip install opencv-python face_recognition numpy
 
 Windows users (recommended):
 
 Install dlib prebuilt wheels:
+```text
 
 pip install cmake
 pip install dlib-19.24.1-cp39-cp39-win_amd64.whl
+```
 
-🧑‍💻 Usage
+## 🧑‍💻 Usage
 1️⃣ Encode Known Faces From Folder
 
 Prepare a folder:
-
+```text
 known_faces/
  ├── john/
  │    ├── 1.jpg
@@ -101,30 +105,33 @@ known_faces/
       ├── img1.png
       └── pic2.jpg
 
-
-Run encoding script:
-
+```
+# Run encoding script:
+```text
 from face_encoder_and_enroller import create_face_encodings
 
 create_face_encodings(
     images_dir="known_faces",
     output_file="data/face_encodings.pkl"
 )
+```
 
-
-Outputs:
+## Outputs:
 ✔ Face encodings
 ✔ Name associations
 ✔ Saved .pkl dataset
 
-2️⃣ Enroll a New Face via Webcam
+##2️⃣ Enroll a New Face via Webcam
 
 Run:
+```bash
 
 python "face encoder and enroller.py"
 
-
+```
 Or use programmatically:
+
+```text
 
 from face_encoder_and_enroller import enroll_face_from_camera
 
@@ -133,25 +140,31 @@ enroll_face_from_camera(
     encodings_file="data/face_encodings.pkl"
 )
 
+```
 
 Controls:
+```text
 
 ▶ SPACE = capture face
 
 ❌ ESC = exit
-
-3️⃣ Run Real-Time Recognition
+```
+## 3️⃣ Run Real-Time Recognition
 
 Start recognition:
 
+```python
+
 python face_recognition_module.py --camera 0
 
+```
+## Use custom encodings:
 
-Use custom encodings:
-
+```text
 python face_recognition_module.py --encodings data/face_encodings.pkl
-
-🎥 Example: Real-Time Recognition (API Use)
+```
+## 🎥 Example: Real-Time Recognition (API Use)
+```bash
 import cv2
 from face_recognition_module import FaceRecognition
 
@@ -178,8 +191,11 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 face_recog.cleanup()
+```
 
-🧩 Adding Face Encodings Programmatically
+### 🧩 Adding Face Encodings Programmatically
+```python
+
 import cv2
 from face_recognition_module import FaceRecognition
 
@@ -190,8 +206,9 @@ rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 face_recog.add_face_encoding(rgb, "New User")
 face_recog.save_encodings()
+```
 
-📊 Performance Features
+## 📊 Performance Features
 ✔ Frame Skipping
 
 Processes frames every Nth frame for maximum FPS.
@@ -220,7 +237,7 @@ Frames processed
 
 Current frame number
 
-🛡 Troubleshooting
+## 🛡 Troubleshooting
 dlib fails to install
 
 Use prebuilt wheels for your OS and Python version.
@@ -238,6 +255,7 @@ Avoid masks blocking facial landmarks
 Low FPS
 
 Try:
+```text
 
 processing_scale=0.5 or 0.4
 
@@ -246,12 +264,13 @@ process_every_n_frames=3
 Use HOG model (already default)
 
 Black screen / no camera
+```
 
 Change camera index:
-
+```python
 python face_recognition_module.py --camera 1
-
-🚀 Roadmap
+```
+## 🚀 Roadmap
 
 Planned upgrades:
 
@@ -265,7 +284,7 @@ Multi-camera recognition pipeline
 
 Web dashboard for management
 
-🤝 Contribution
+## 🤝 Contribution
 
 Fork the repo
 
@@ -277,11 +296,11 @@ Submit a pull request
 
 Pull requests are welcome!
 
-📜 License
+## 📜 License
 
 This project is released under the MIT License
 You are free to use it in commercial and personal projects.
 
-💬 Support
+## 💬 Support
 
-If you encounter any issue or want new features added, feel free to open a GitHub issue.
+### If you encounter any issue or want new features added, feel free to open a GitHub issue.
